@@ -1,0 +1,12 @@
+import { EntityRepository, getRepository, Repository } from 'typeorm'
+import { CategoryModel } from '../model/CategoryModel'
+
+@EntityRepository(CategoryModel)
+export class CategoryDAO extends Repository<CategoryModel> {
+  async sarch(): Promise<CategoryModel[]> {
+    const query = getRepository(CategoryModel).createQueryBuilder('category');
+
+    query.leftJoinAndSelect('category.product', 'product');
+    return query.getMany();
+  }
+}
