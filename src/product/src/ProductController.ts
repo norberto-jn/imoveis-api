@@ -8,12 +8,12 @@ export class ProductController {
 
   @Get()
   async sarch() {
-    return new ProductResponseDTO(await this.productManager.sarch());
+    return new ProductResponseDTO(await this.productManager.sarch())
   }
 
   @Get(':code')
   async findOne(@Param('code') code: number) {
-    return await this.productManager.findOne(code);
+    return await this.productManager.findOne(code)
   }
 
   async save() {}

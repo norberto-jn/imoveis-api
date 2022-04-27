@@ -7,20 +7,20 @@ import { CategoryModel } from './CategoryModel'
 @Entity('product')
 export class ProductModel {
   @PrimaryGeneratedColumn()
-  code: number;
+  code: number
 
   @Column({ type: 'varchar' })
-  nome: string;
+  name: string
 
   @Column({ type: 'varchar' })
-  imagem: string;
+  image: string
 
   @Column({ type: 'varchar' })
-  whatsapp: string;
+  whatsapp: string
 
   @Column({ type: 'double' })
-  valor: number;
+  value: number
 
   @ManyToOne(() => CategoryModel, (category) => category.product)
-  categoryCode: CategoryModel;
+  categoryCode: CategoryModel
 }

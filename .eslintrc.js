@@ -8,7 +8,6 @@ module.exports = {
   plugins: ['@typescript-eslint/eslint-plugin'],
   extends: [
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
   ],
   root: true,
   env: {
@@ -17,6 +16,7 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js'],
   rules: {
-  
+    "semi-style": ["error", "last"],
+    "semi": ["error", "never"]
   },
 };
