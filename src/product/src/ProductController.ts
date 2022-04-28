@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { ProductSaveResquestDTO } from './dto/request/ProductSaveResquestDTO'
 import { ProductUpdateResquestDTO } from './dto/request/ProductUpdateResquestDTO'
 import { ProductItemResponseDTO } from './dto/response/ProductItemResponseDTO'
-import { ProductResponseDTO } from './dto/response/ProductResponseDTO'
+import { ProductListResponseDTO } from './dto/response/ProductListResponseDTO'
 import { ProductManager } from './service/ProductManager'
 
 @Controller('product')
@@ -10,13 +10,13 @@ export class ProductController {
     constructor(private readonly productManager: ProductManager) { }
 
     @Get()
-    async sarch() {
-        return new ProductResponseDTO(await this.productManager.sarch())
+    async sarch(): Promise<ProductListResponseDTO> {
+        return new ProductListResponseDTO(await this.productManager.sarch())
     }
 
     @Get(':code')
-    async findOne(@Param('code') code: number) {
-        return await this.productManager.findOne(code)
+    async findOne(@Param('code') code: number): Promise<ProductItemResponseDTO> {
+        return new ProductItemResponseDTO(await this.productManager.findOne(code))
     }
 
     @Post()
@@ -30,5 +30,7 @@ export class ProductController {
     }
 
     @Delete(':code')
-    async delete(): Promise<void> { }
+    async delete(@Param('code') code: number): Promise<void> {
+        await this.productManager.delete(code)
+    }
 }

@@ -1,7 +1,7 @@
 import { ProductModel } from '../../model/ProductModel'
 import { ProductItemResponseDTO } from './ProductItemResponseDTO'
 
-export class ProductResponseDTO {
+export class ProductListResponseDTO {
     
   imoveis: ProductItemResponseDTO[]
 

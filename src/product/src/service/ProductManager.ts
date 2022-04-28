@@ -65,4 +65,14 @@ export class ProductManager {
 
     }
 
+    async delete(code: number) {
+
+        const productModel = await this._productDAO.findOne(code)
+
+        if (!productModel)
+            throw new NotFoundException(`Produto do código ${code} não foi encontrado.`)
+
+        await this._productDAO.delete(productModel)
+    }
+
 }
