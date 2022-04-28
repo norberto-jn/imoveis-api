@@ -35,6 +35,10 @@ export class ProductManager {
             categoryCode: categoryModel
         }
 
+        if (dto.address)
+            productModel.address = dto.address
+
+
         return this._productDAO.save(productModel)
     }
 

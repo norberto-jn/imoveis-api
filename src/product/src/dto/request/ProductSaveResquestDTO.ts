@@ -1,4 +1,5 @@
-import { IsNotEmpty } from "class-validator"
+import { IsNotEmpty, IsOptional } from "class-validator"
+import { AddressSaveRequestDTO } from "src/address/src/dto/request/AddressSaveRequestDTO"
 
 export class ProductSaveResquestDTO {
 
@@ -16,4 +17,7 @@ export class ProductSaveResquestDTO {
   
     @IsNotEmpty()
     categoryCode: number
+
+    @IsOptional()
+    address?:AddressSaveRequestDTO
 }
