@@ -1,15 +1,14 @@
 CREATE DATABASE `imoveis` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
 -- imoveis.category definition
-
 CREATE TABLE `category` (
   `code` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  PRIMARY KEY (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`code`),
+  UNIQUE KEY `IDX_23c05c292c439d77b0de816b50` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- imoveis.product definition
-
 CREATE TABLE `product` (
   `code` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,

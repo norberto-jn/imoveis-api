@@ -3,12 +3,12 @@ import { ProductModel } from './ProductModel'
 
 @Entity('category')
 export class CategoryModel {
-  @PrimaryGeneratedColumn()
-  code: number
+    @PrimaryGeneratedColumn()
+    code?: number
 
-  @Column({ type: 'varchar' })
-  name: string
+    @Column({ type: 'varchar', unique: true })
+    name: string
 
-  @OneToMany(() => ProductModel, (product) => product.categoryCode)
-  product: ProductModel[]
+    @OneToMany(() => ProductModel, (product) => product.categoryCode)
+    product?: ProductModel[]
 }

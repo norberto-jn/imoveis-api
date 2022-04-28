@@ -1,24 +1,34 @@
-import { Controller, Get, Param } from '@nestjs/common'
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
+import { ProductSaveResquestDTO } from './dto/request/ProductSaveResquestDTO'
+import { ProductUpdateResquestDTO } from './dto/request/ProductUpdateResquestDTO'
+import { ProductItemResponseDTO } from './dto/response/ProductItemResponseDTO'
 import { ProductResponseDTO } from './dto/response/ProductResponseDTO'
 import { ProductManager } from './service/ProductManager'
 
 @Controller('product')
 export class ProductController {
-  constructor(private readonly productManager: ProductManager) {}
+    constructor(private readonly productManager: ProductManager) { }
 
-  @Get()
-  async sarch() {
-    return new ProductResponseDTO(await this.productManager.sarch())
-  }
+    @Get()
+    async sarch() {
+        return new ProductResponseDTO(await this.productManager.sarch())
+    }
 
-  @Get(':code')
-  async findOne(@Param('code') code: number) {
-    return await this.productManager.findOne(code)
-  }
+    @Get(':code')
+    async findOne(@Param('code') code: number) {
+        return await this.productManager.findOne(code)
+    }
 
-  async save() {}
+    @Post()
+    async save(@Body() dto: ProductSaveResquestDTO): Promise<ProductItemResponseDTO> {
+        return new ProductItemResponseDTO(await this.productManager.save(dto))
+    }
 
-  async update() {}
+    @Put(':code')
+    async update(@Param('code') code: number, @Body() dto: ProductUpdateResquestDTO): Promise<ProductItemResponseDTO> {
+        return new ProductItemResponseDTO(await this.productManager.update(code, dto))
+    }
 
-  async delete(): Promise<void> {}
+    @Delete(':code')
+    async delete(): Promise<void> { }
 }

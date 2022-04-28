@@ -6,8 +6,9 @@ import { CategoryModel } from './CategoryModel'
 
 @Entity('product')
 export class ProductModel {
+    
   @PrimaryGeneratedColumn()
-  code: number
+  code?: number
 
   @Column({ type: 'varchar' })
   name: string
@@ -23,4 +24,5 @@ export class ProductModel {
 
   @ManyToOne(() => CategoryModel, (category) => category.product)
   categoryCode: CategoryModel
+  
 }
