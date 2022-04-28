@@ -8,9 +8,14 @@ import { CategoryManager } from './service/CategoryManager'
 export class CategoryController {
     constructor(private readonly categoryManager: CategoryManager) { }
 
-    @Get()
+    @Get('sarch')
     async sarch(): Promise<CategoryListResponseDTO> {
         return new CategoryListResponseDTO(await this.categoryManager.sarch())
+    }
+
+    @Get()
+    async findAll(): Promise<CategoryListResponseDTO> {
+        return new CategoryListResponseDTO(await this.categoryManager.findAll())
     }
 
     @Get(':code')

@@ -14,6 +14,10 @@ export class CategoryManager {
         return this._categoryDAO.sarch()
     }
 
+    async findAll() {
+        return this._categoryDAO.find()
+    }
+
     async findOne(code: number): Promise<CategoryModel> {
 
         const categoryModel = await this._categoryDAO.findOne(code, { relations: ['product'] })
