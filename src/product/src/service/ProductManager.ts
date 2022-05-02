@@ -13,7 +13,7 @@ export class ProductManager {
     ) { }
 
     async sarch(): Promise<ProductModel[]> {
-        return this._productDAO.find()
+        return this._productDAO.find({ relations: ['categoryCode', 'address'] })
     }
 
     async findOne(code: number): Promise<ProductModel> {

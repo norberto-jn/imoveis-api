@@ -10,6 +10,7 @@ export class CategoryItemResponseDTO {
     constructor(data: CategoryModel) {
         this.code = data.code
         this.categoria = data.name
+        
         if (data.product)
             this.imoveis = data.product.map((item) => new ProductItemResponseDTO(item))
 
