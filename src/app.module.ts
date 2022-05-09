@@ -16,7 +16,7 @@ import { ProductModel } from './product/src/model/ProductModel'
             type: 'mysql',
             host: 'localhost',
             port: 3306,
-            username: 'nerit',
+            username: '',
             password: '',
             database: 'imoveis',
             entities: [ProductModel, CategoryModel, AddressModel],

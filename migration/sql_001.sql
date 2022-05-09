@@ -48,9 +48,9 @@ INSERT INTO imoveis.category (code, name) VALUES(1, 'Casas');
 INSERT INTO imoveis.category (code, name) VALUES(2, 'Apartamentos');
 INSERT INTO imoveis.category (code, name) VALUES(3, 'Mansões');
 
-INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCodeCode,addressCode) VALUES(2, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_002.jpg?raw=true', '31999999999', 1000.0, 1,1);
-INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCodeCode,addressCode) VALUES(1, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_001.jpg?raw=true', '31999999999', 1000.0, 1,2);
-INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCodeCode,addressCode) VALUES(3, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_003.jpg?raw=true', '31999999999', 1000.0, 2,3);
-INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCodeCode,addressCode) VALUES(4, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_004.jpg?raw=true', '31999999999', 1000.0, 2,4);
-INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCodeCode,addressCode) VALUES(5, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_005.jpg?raw=true', '31999999999', 1000.0, 2,5);
-INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCodeCode,addressCode) VALUES(6, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_006.jpg?raw=true', '31999999999', 1000.0, 2,6);
+INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCode,addressCode) VALUES(2, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_002.jpg?raw=true', '31999999999', 1000.0, 1,1);
+INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCode,addressCode) VALUES(1, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_001.jpg?raw=true', '31999999999', 1000.0, 1,2);
+INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCode,addressCode) VALUES(3, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_003.jpg?raw=true', '31999999999', 1000.0, 2,3);
+INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCode,addressCode) VALUES(4, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_004.jpg?raw=true', '31999999999', 1000.0, 2,4);
+INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCode,addressCode) VALUES(5, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_005.jpg?raw=true', '31999999999', 1000.0, 2,5);
+INSERT INTO imoveis.product (code, name, image, whatsapp, value, categoryCode,addressCode) VALUES(6, 'casa de praia', 'https://github.com/norberto-jn/imoveis-img/blob/main/item_006.jpg?raw=true', '31999999999', 1000.0, 2,6);
