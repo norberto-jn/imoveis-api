@@ -22,12 +22,12 @@ export class PersonManager {
         const getPersonPhone: PersonModel = await this._personDAO.findOne({ where: { phone: dto.phone } })
 
         if (getPersonPhone)
-            throw new BadRequestException(`O telefone ${dto.email} já está em uso.`)
+            throw new BadRequestException(`O telefone ${dto.phone} já está em uso.`)
 
         const getPersonCPF: PersonModel = await this._personDAO.findOne({ where: { cpf: dto.cpf } })
 
         if (getPersonCPF)
-            throw new BadRequestException(`O cpf ${dto.email} já está em uso.`)
+            throw new BadRequestException(`O cpf ${dto.cpf} já está em uso.`)
 
         const getPersonCNPJ: PersonModel = await this._personDAO.findOne({ where: { cnpj: dto.cnpj } })
 
@@ -46,17 +46,7 @@ export class PersonManager {
             }
         }
 
-        const personSaved: PersonModel = await this._personDAO.save(personSaveModel)
-
-        // if (file) {
-        //     try {
-        //         const url = await GoogleCloudStorageUtils.Upload(personSaved.code.toString(), file, `person/${personSaved.code}/profile/picture/`)
-        //         await this._personDAO.update({ code: personSaveModel.code }, { url_image: url })
-        //         console.log('saved sucess!')
-        //     } catch (error) {
-        //         console.log('ERRO', error)
-        //     }
-        // }
+        const personSaved: PersonModel = await this._personDAO.save(personSaveModel)     
 
         return this._personDAO.findOne(personSaved.code)
     }
