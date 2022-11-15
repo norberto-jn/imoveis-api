@@ -24,6 +24,17 @@ export class PersonManager {
         if (getPersonPhone)
             throw new BadRequestException(`O telefone ${dto.email} já está em uso.`)
 
+        const getPersonCPF: PersonModel = await this._personDAO.findOne({ where: { cpf: dto.cpf } })
+
+        if (getPersonCPF)
+            throw new BadRequestException(`O cpf ${dto.email} já está em uso.`)
+
+        const getPersonCNPJ: PersonModel = await this._personDAO.findOne({ where: { cnpj: dto.cnpj } })
+
+        if (getPersonCNPJ)
+            throw new BadRequestException(`O cpf ${dto.cnpj} já está em uso.`)
+
+
         const personSaveModel: PersonModel = {
             name: dto.name,
             email: dto.email,
@@ -51,7 +62,7 @@ export class PersonManager {
     }
 
     async findOne(code: number) {
-        return  await this._personDAO.findOne(code)
+        return await this._personDAO.findOne(code)
     }
 
 }
